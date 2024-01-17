@@ -30,7 +30,7 @@ docker run --pull=always
 		   --volume /your/storage/path/:/data/db \
 		   --log-driver json-file \
 		   --log-opt max-size=10m \
-		   -p 6500:6500 \
+		   -p 6501:6501 \
 		   --name rdtclient \
 		   rogerfar/rdtclient:latest
 ```
@@ -57,7 +57,7 @@ services:
             options:
                 max-size: 10m
         ports:
-            - '6500:6500'
+            - '6501:6501'
 ```
 
 And to run:
@@ -94,14 +94,14 @@ Instead of running in Docker you can install it as a service in Linux.
 
     ```sudo apt-get update && sudo apt-get install -y dotnet-sdk-8.0```  
 
-2. Get latest archive from [releases](https://github.com/rogerfar/rdt-client/releases):  
+2. Get latest archive from [releases](https://github.com/JustJoshTikTok/rdt-client/releases):  
 ```wget <zip_url>```
 3. Extract to path of your choice (~/rtdc in this example):  
 ```unzip RealDebridClient.zip -d ~/rdtc && cd ~/rdtc```
 4. In appsettings.json replace the Database Path to a path on your host. Any directories in path must already exist. Or just remove "/data/db/" for ease.
 5. Test rdt client runs ok:  
 ```dotnet RdtClient.Web.dll```   
-navigate to http://<ipaddress>:6500, if all is good then we'll create a service
+navigate to http://<ipaddress>:6501, if all is good then we'll create a service
 6. Create a service (systemd in this example):  
 ```sudo nano /etc/systemd/system/rdtc.service```  
 
@@ -136,7 +136,7 @@ If you use Proxmox for your homelab, you can run rdt-client in a linux container
 
 ### First Login
 
-1. Browse to [http://127.0.0.1:6500](http://127.0.0.1:6500) (or the path of your server).
+1. Browse to [http://127.0.0.1:6501](http://127.0.0.1:6501) (or the path of your server).
 1. The very first credentials you enter in will be remembered for future logins.
 1. Click on `Settings` on the top and enter your Real-Debrid API key (found here: [https://real-debrid.com/apitoken](https://real-debrid.com/apitoken).
 1. If you are using docker then the `Download path` setting needs to be the same as in your docker file mapping. By default this is `/data/downloads`. If you are using Windows, this is a path on your host.
@@ -196,7 +196,7 @@ RdtClient emulates the qBittorrent web protocol and allow applications to use th
 1. Go to the `Download Client` tab and click the plus to add.
 1. Click `qBittorrent` in the list.
 1. Enter the IP or hostname of the RealDebridClient in the `Host` field.
-1. Enter the 6500 in the `Port` field.
+1. Enter the 6501 in the `Port` field.
 1. Enter your Username/Password you setup above in the Username/Password field.
 1. Set the category to `sonarr` for Sonarr or `radarr` for Radarr.
 1. Leave the other settings as is.
@@ -231,7 +231,7 @@ By default the application runs in the root of your hosted address (i.e. https:/
 ## Build docker container
 
 1. In the root of the project run `docker build --tag rdtclient .`
-1. To create the docker container run `docker run --publish 6500:6500 --detach --name rdtclientdev rdtclient:latest`
+1. To create the docker container run `docker run --publish 6501:6501 --detach --name rdtclientdev rdtclient:latest`
 1. To stop: `docker stop rdtclient`
 1. To remove: `docker rm rdtclient`
 1. Or use `docker-build.bat`

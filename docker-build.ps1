@@ -44,7 +44,7 @@ param(
 )
 
 # Set Defaults
-$defaultPort = 6500
+$defaultPort = 6501
 $appName = "rdtclient"
 $imageName = "$($DockerAccount)/$($appName)"
 

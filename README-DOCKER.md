@@ -1,4 +1,4 @@
-# [rogerfar/rdt-client](https://github.com/rogerfar/rdt-client)
+# [rogerfar/rdt-client](https://github.com/JustJoshTikTok/rdt-client)
 Thid docker file follows the [linuxserver.io](https://linuxserver.io) pattern that leverages the [s6-overlay](https://github.com/just-containers/s6-overlay) to run the application as a service within the container.  This allows for scripts to be run prior to start of the application to handle initalization and setting of permissions. 
 
 rdt-client is a web a web interface to manage your torrents on Real-Debrid. It supports the following features:
@@ -58,7 +58,7 @@ services:
        options:
           max-size: 10m
     ports:
-      - 6500:6500
+      - 6501:6501
     restart: unless-stopped
 ```
 
@@ -70,7 +70,7 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
-  -p 6500:6500 \
+  -p 6501:6501 \
   -v <path to data>:/data/db \
   -v <path/to/downloads>:/data/downloads \
   --restart unless-stopped \
@@ -83,7 +83,7 @@ Container images are configured using parameters passed at runtime (such as thos
 
 | Parameter | Function |
 | :----: | --- |
-| `-p 6500` | WebUI |
+| `-p 6501` | WebUI |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
@@ -124,7 +124,7 @@ In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as bel
 &nbsp;
 ## Application Setup
 
-Webui can be found at  `<your-ip>:6500` 
+Webui can be found at  `<your-ip>:6501` 
 
 ## Support Info
 

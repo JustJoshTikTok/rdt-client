@@ -80,7 +80,7 @@ public class DbSettingsDownloadClient
 {
     [DisplayName("Download client")]
     [Description(@"Select which download client to use, see the
-<a href=""https://github.com/rogerfar/rdt-client/"" target=""_blank"">README</a> for the various options.")]
+<a href=""https://github.com/JustJoshTikTok/rdt-client/"" target=""_blank"">README</a> for the various options.")]
     public DownloadClient Client { get; set; } = DownloadClient.Internal;
 
     [DisplayName("Download path")]

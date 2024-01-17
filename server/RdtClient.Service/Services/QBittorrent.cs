@@ -373,9 +373,9 @@ public class QBittorrent
         var result = new TorrentProperties
         {
             AdditionDate = torrent.Added.ToUnixTimeSeconds(),
-            Comment = "RealDebridClient <https://github.com/rogerfar/rdt-client>",
+            Comment = "RealDebridClient <https://github.com/JustJoshTikTok/rdt-client>",
             CompletionDate = torrent.Completed?.ToUnixTimeSeconds() ?? -1,
-            CreatedBy = "RealDebridClient <https://github.com/rogerfar/rdt-client>",
+            CreatedBy = "RealDebridClient <https://github.com/JustJoshTikTok/rdt-client>",
             CreationDate = torrent.Added.ToUnixTimeSeconds(),
             DlLimit = -1,
             DlSpeed = speed,

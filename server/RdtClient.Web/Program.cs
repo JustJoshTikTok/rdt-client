@@ -28,7 +28,7 @@ builder.Services.AddSingleton(appSettings);
 // Configure URLs
 if (appSettings.Port <= 0)
 {
-    appSettings.Port = 6500;
+    appSettings.Port = 6501;
 }
 
 builder.WebHost.ConfigureKestrel(options =>
